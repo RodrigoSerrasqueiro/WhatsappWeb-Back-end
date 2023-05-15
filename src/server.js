@@ -11,8 +11,10 @@ const port = process.env.PORT || 4000;
 // on -> escutando - receptor
 // emit -> enviando algum dado
 
-io.on('connection', (socket) => {
-  console.log(`Usuário ${socket.id} se conectou`)
+io.on("connection", (socket) => {
+  socket.on("join", (userName) => {
+    console.log(userName)
+  })
 })
 
 server.listen(port, () => console.log(`servidor rodando na porta ${port}`))
