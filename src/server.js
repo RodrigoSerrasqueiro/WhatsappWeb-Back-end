@@ -12,7 +12,7 @@ const port = process.env.PORT || 4000;
 // emit -> enviando algum dado
 
 io.on('connection', (socket) => {
-  console.log(socket.id)
+  console.log(`Usuário ${socket.id} se conectou`)
 })
 
 server.listen(port, () => console.log(`servidor rodando na porta ${port}`))
