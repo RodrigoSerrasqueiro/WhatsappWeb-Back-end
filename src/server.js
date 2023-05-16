@@ -21,7 +21,6 @@ io.on("connection", (socket) => {
   socket.on("join", (userName) => {
     const user = { id: socket.id, userName};
     users.push(user);
-    io.emit("message", {name: null, message: `${userName} entrou no chat`});
     io.emit("users", users);
   })
 
