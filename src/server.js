@@ -25,6 +25,7 @@ io.on("connection", (socket) => {
   })
 
   socket.on("message", (message) => {
+    message.userID = socket.id;
     io.emit("message", message);
   })
 
